@@ -33,12 +33,12 @@
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
         <script src="js/leaflet.markercluster.js"></script>
-        <script src="data/AbandonedSeafarers2022CSV_2.js"></script>
+        <script src="data/AbandonedSeafarersJuly2022_2.js"></script>
         <script src="data/TerritorialSeas12NauticalMiles_3.js"></script>
         <script>
         var map = L.map('map', {
-            zoomControl:true, maxZoom:24, minZoom:1
-        }).fitBounds([[-54.127608827580374,-28.080078242650778],[67.8583498929388,171.5216957422856]]);
+            zoomControl:true, maxZoom:25, minZoom:1
+        }).fitBounds([[-40.211859297740425,-9.145315749460035],[49.90764229483853,119.31956506167423]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -52,7 +52,7 @@
             opacity: 1.0,
             attribution: '',
             minZoom: 1,
-            maxZoom: 24,
+            maxZoom: 25,
             minNativeZoom: 0,
             maxNativeZoom: 19
         });
@@ -65,13 +65,13 @@
             opacity: 0.602,
             attribution: '',
             minZoom: 1,
-            maxZoom: 24,
+            maxZoom: 25,
             minNativeZoom: 0,
             maxNativeZoom: 10
         });
         layer_EsriOcean_1;
         map.addLayer(layer_EsriOcean_1);
-        function pop_AbandonedSeafarers2022CSV_2(feature, layer) {
+        function pop_AbandonedSeafarersJuly2022_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['X'] !== null ? autolinker.link(feature.properties['X'].toLocaleString()) : '') + '</td>\
@@ -96,8 +96,8 @@
                         <td>' + (feature.properties['Port Name'] !== null ? autolinker.link(feature.properties['Port Name'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Date of Abandonment</th>\
-                        <td>' + (feature.properties['Date of Abandonment'] !== null ? autolinker.link(feature.properties['Date of Abandonment'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Date Abandoned</th>\
+                        <td>' + (feature.properties['Date Abandoned'] !== null ? autolinker.link(feature.properties['Date Abandoned'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Date Reported</th>\
@@ -108,8 +108,8 @@
                         <td>' + (feature.properties['Number of Seafarers'] !== null ? autolinker.link(feature.properties['Number of Seafarers'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Nationality</th>\
-                        <td>' + (feature.properties['Nationality'] !== null ? autolinker.link(feature.properties['Nationality'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Nationalities</th>\
+                        <td>' + (feature.properties['Nationalities'] !== null ? autolinker.link(feature.properties['Nationalities'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">IMO Number</th>\
@@ -124,28 +124,28 @@
                         <td>' + (feature.properties['Ship Type'] !== null ? autolinker.link(feature.properties['Ship Type'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Gross Tonnage (DWT)</th>\
-                        <td>' + (feature.properties['Gross Tonnage (DWT)'] !== null ? autolinker.link(feature.properties['Gross Tonnage (DWT)'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Gross Tonnage</th>\
+                        <td>' + (feature.properties['Gross Tonnage'] !== null ? autolinker.link(feature.properties['Gross Tonnage'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Ship Year</th>\
-                        <td>' + (feature.properties['Ship Year'] !== null ? autolinker.link(feature.properties['Ship Year'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Ship Year of Build</th>\
+                        <td>' + (feature.properties['Ship Year of Build'] !== null ? autolinker.link(feature.properties['Ship Year of Build'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">Company</th>\
                         <td>' + (feature.properties['Company'] !== null ? autolinker.link(feature.properties['Company'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Company Country of Registration</th>\
-                        <td>' + (feature.properties['Company Country of Registration'] !== null ? autolinker.link(feature.properties['Company Country of Registration'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Company country of registration</th>\
+                        <td>' + (feature.properties['Company country of registration'] !== null ? autolinker.link(feature.properties['Company country of registration'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Payment to Seafarers</th>\
-                        <td>' + (feature.properties['Payment to Seafarers'] !== null ? autolinker.link(feature.properties['Payment to Seafarers'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Payment</th>\
+                        <td>' + (feature.properties['Payment'] !== null ? autolinker.link(feature.properties['Payment'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Repatriation Status</th>\
-                        <td>' + (feature.properties['Repatriation Status'] !== null ? autolinker.link(feature.properties['Repatriation Status'].toLocaleString()) : '') + '</td>\
+                        <th scope="row">Repatriation</th>\
+                        <td>' + (feature.properties['Repatriation'] !== null ? autolinker.link(feature.properties['Repatriation'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
                         <th scope="row">ILO Status</th>\
@@ -158,15 +158,15 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
-        function style_AbandonedSeafarers2022CSV_2_0(feature) {
+        function style_AbandonedSeafarersJuly2022_2_0(feature) {
             var context = {
                 feature: feature,
                 variables: {}
             };
             // Start of if blocks and style check logic
-            if (exp_AbandonedSeafarers2022CSV_2rule0_eval_expression(context)) {
+            if (exp_AbandonedSeafarersJuly2022_2rule0_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -176,9 +176,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule1_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule1_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -188,9 +188,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule2_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule2_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -200,9 +200,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule3_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule3_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -212,9 +212,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule4_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule4_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -224,9 +224,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule5_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule5_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -236,9 +236,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule6_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule6_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -248,9 +248,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule8_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule8_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -260,9 +260,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule9_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule9_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -272,9 +272,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule10_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule10_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -284,9 +284,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule11_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule11_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -296,9 +296,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule12_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule12_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -308,9 +308,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule13_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule13_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -320,9 +320,9 @@
                 interactive: true,
             };
                 }
-                else if (exp_AbandonedSeafarers2022CSV_2rule14_eval_expression(context)) {
+                else if (exp_AbandonedSeafarersJuly2022_2rule14_eval_expression(context)) {
                   return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -334,7 +334,7 @@
                 }
             else {
                 return {
-                pane: 'pane_AbandonedSeafarers2022CSV_2',
+                pane: 'pane_AbandonedSeafarersJuly2022_2',
         rotationAngle: 0.0,
         rotationOrigin: 'center center',
         icon: L.icon({
@@ -345,30 +345,30 @@
             };
             }
         }
-        map.createPane('pane_AbandonedSeafarers2022CSV_2');
-        map.getPane('pane_AbandonedSeafarers2022CSV_2').style.zIndex = 402;
-        map.getPane('pane_AbandonedSeafarers2022CSV_2').style['mix-blend-mode'] = 'normal';
-        var layer_AbandonedSeafarers2022CSV_2 = new L.geoJson(json_AbandonedSeafarers2022CSV_2, {
+        map.createPane('pane_AbandonedSeafarersJuly2022_2');
+        map.getPane('pane_AbandonedSeafarersJuly2022_2').style.zIndex = 402;
+        map.getPane('pane_AbandonedSeafarersJuly2022_2').style['mix-blend-mode'] = 'normal';
+        var layer_AbandonedSeafarersJuly2022_2 = new L.geoJson(json_AbandonedSeafarersJuly2022_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_AbandonedSeafarers2022CSV_2',
-            layerName: 'layer_AbandonedSeafarers2022CSV_2',
-            pane: 'pane_AbandonedSeafarers2022CSV_2',
-            onEachFeature: pop_AbandonedSeafarers2022CSV_2,
+            dataVar: 'json_AbandonedSeafarersJuly2022_2',
+            layerName: 'layer_AbandonedSeafarersJuly2022_2',
+            pane: 'pane_AbandonedSeafarersJuly2022_2',
+            onEachFeature: pop_AbandonedSeafarersJuly2022_2,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.marker(latlng, style_AbandonedSeafarers2022CSV_2_0(feature));
+                return L.marker(latlng, style_AbandonedSeafarersJuly2022_2_0(feature));
             },
         });
-        var cluster_AbandonedSeafarers2022CSV_2 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+        var cluster_AbandonedSeafarersJuly2022_2 = new L.MarkerClusterGroup({showCoverageOnHover: false,
             spiderfyDistanceMultiplier: 2});
-        cluster_AbandonedSeafarers2022CSV_2.addLayer(layer_AbandonedSeafarers2022CSV_2);
+        cluster_AbandonedSeafarersJuly2022_2.addLayer(layer_AbandonedSeafarersJuly2022_2);
 
-        bounds_group.addLayer(layer_AbandonedSeafarers2022CSV_2);
-        cluster_AbandonedSeafarers2022CSV_2.addTo(map);
+        bounds_group.addLayer(layer_AbandonedSeafarersJuly2022_2);
+        cluster_AbandonedSeafarersJuly2022_2.addTo(map);
         function pop_TerritorialSeas12NauticalMiles_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -450,7 +450,7 @@
         bounds_group.addLayer(layer_TerritorialSeas12NauticalMiles_3);
         map.addLayer(layer_TerritorialSeas12NauticalMiles_3);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'<img src="legend/TerritorialSeas12NauticalMiles_3.png" /> Territorial Seas, 12 Nautical Miles': layer_TerritorialSeas12NauticalMiles_3,'Abandoned Seafarers 2022, CSV<br /><table><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Resolved0.png" /></td><td>Resolved</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Inactive1.png" /></td><td>Inactive</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_CargoShips2.png" /></td><td>Cargo Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_PassengerShips3.png" /></td><td>Passenger Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_FishingBoat4.png" /></td><td>Fishing Boat</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Tanker5.png" /></td><td>Tanker</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_SupplyTugVessels6.png" /></td><td>Supply & Tug Vessels</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Other7.png" /></td><td>Other</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Resolved8.png" /></td><td>Resolved</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Inactive9.png" /></td><td>Inactive</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_CargoShips10.png" /></td><td>Cargo Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Tanker11.png" /></td><td>Tanker</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_PassengerShips12.png" /></td><td>Passenger Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_FishingBoat13.png" /></td><td>Fishing Boat</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_SupplyTugVessels14.png" /></td><td>Supply & Tug Vessels</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarers2022CSV_2_Other15.png" /></td><td>Other</td></tr></table>': cluster_AbandonedSeafarers2022CSV_2,"Esri Ocean": layer_EsriOcean_1,"OpenStreetMap": layer_OpenStreetMap_0,}).addTo(map);
+        L.control.layers(baseMaps,{'<img src="legend/TerritorialSeas12NauticalMiles_3.png" /> Territorial Seas, 12 Nautical Miles': layer_TerritorialSeas12NauticalMiles_3,'Abandoned Seafarers, July 2022<br /><table><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Resolved0.png" /></td><td>Resolved</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Inactive1.png" /></td><td>Inactive</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_CargoShips2.png" /></td><td>Cargo Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_PassengerShips3.png" /></td><td>Passenger Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_FishingBoat4.png" /></td><td>Fishing Boat</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Tanker5.png" /></td><td>Tanker</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_SupplyTugVessels6.png" /></td><td>Supply & Tug Vessels</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Other7.png" /></td><td>Other</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Resolved8.png" /></td><td>Resolved</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Inactive9.png" /></td><td>Inactive</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_CargoShips10.png" /></td><td>Cargo Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Tanker11.png" /></td><td>Tanker</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_PassengerShips12.png" /></td><td>Passenger Ships</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_FishingBoat13.png" /></td><td>Fishing Boat</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_SupplyTugVessels14.png" /></td><td>Supply & Tug Vessels</td></tr><tr><td style="text-align: center;"><img src="legend/AbandonedSeafarersJuly2022_2_Other15.png" /></td><td>Other</td></tr></table>': cluster_AbandonedSeafarersJuly2022_2,"Esri Ocean": layer_EsriOcean_1,"OpenStreetMap": layer_OpenStreetMap_0,}).addTo(map);
         setBounds();
         var i = 0;
         layer_TerritorialSeas12NauticalMiles_3.eachLayer(function(layer) {
